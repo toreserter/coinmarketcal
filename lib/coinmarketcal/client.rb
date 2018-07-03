@@ -10,7 +10,7 @@ module Coinmarketcal
     attr_reader :client_id, :client_secret, :access_token
 
     def initialize(attrs = {})
-      @client_id    = attrs[:client_id]
+      @client_id = attrs[:client_id]
       @client_secret = attrs[:client_secret]
       @access_token = get_access_token
     end
@@ -30,9 +30,9 @@ module Coinmarketcal
 
     def connection
       @connection ||= Faraday.new(:url => HOST) do |faraday|
-        faraday.request  :json
-        faraday.response  :json
-        faraday.adapter  Faraday.default_adapter
+        faraday.request :json
+        faraday.response :json
+        faraday.adapter Faraday.default_adapter
       end
     end
 
@@ -40,6 +40,7 @@ module Coinmarketcal
       if response.status.to_i == 200
         response.body
       else
+        puts response.status
         #TODO: error handling
       end
     end
