@@ -1,4 +1,4 @@
-# Coinmarketcal
+# Coinmarketcal [![Gem Version](https://badge.fury.io/rb/coinmarketcal.svg)](https://badge.fury.io/rb/coinmarketcal)
 
 Unofficial gem for the CoinMarketCal API
 CoinMarketCal is the economic calendar for the cryptocurrency market. Evidence-based and community-driven.
