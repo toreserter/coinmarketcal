@@ -5,6 +5,7 @@ module Coinmarketcal
   autoload :Configuration, 'coinmarketcal/configuration'
   autoload :Coin, 'coinmarketcal/coin'
   autoload :Event, 'coinmarketcal/event'
+  autoload :Category, 'coinmarketcal/category'
 
 
   def self.client
