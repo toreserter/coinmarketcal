@@ -1,6 +1,7 @@
 # Coinmarketcal [![Gem Version](https://badge.fury.io/rb/coinmarketcal.svg)](https://badge.fury.io/rb/coinmarketcal)
 
-Unofficial gem for the CoinMarketCal API
+Unofficial gem for the CoinMarketCal API.
+
 CoinMarketCal is the economic calendar for the cryptocurrency market. Evidence-based and community-driven.
 
 ## Installation
@@ -22,6 +23,7 @@ Or install it yourself as:
 ## Usage
 
 You can authenticate access to your CoinMarketCal account by configuring your implementation of the coinmarketcal gem. This is accomplished by using a config block at the top of your application.
+
 Set up your keys at: https://api.coinmarketcal.com/developer/dashboard
 
 ```ruby
@@ -58,4 +60,3 @@ Coinmarketcal::Category.all
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-

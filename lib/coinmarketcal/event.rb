@@ -12,15 +12,15 @@ module Coinmarketcal
 
     def self.all(attrs = {})
       search_hash = {
-          page: (attrs['page'] || 1),
-          max: attrs['max'],
-          dateRangeStart: attrs['date_range_start'],
-          dateRangeEnd: attrs['date_range_end'],
-          coins: attrs['coins'],
-          categories: attrs['categories'],
-          sortBy: attrs['sort_by'],
-          showOnly: attrs['show_only'],
-          showMetadata: attrs['show_metadata']
+          page: (attrs[:page] || 1),
+          max: attrs[:max],
+          dateRangeStart: attrs[:date_range_start],
+          dateRangeEnd: attrs[:date_range_end],
+          coins: attrs[:coins],
+          categories: attrs[:categories],
+          sortBy: attrs[:sort_by],
+          showOnly: attrs[:show_only],
+          showMetadata: attrs[:show_metadata]
       }
       client.get('v1/events', compact(search_hash)).map { |data| new(data) }
     end
