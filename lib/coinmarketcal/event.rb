@@ -1,3 +1,4 @@
+require 'time'
 module Coinmarketcal
   class Event
     attr_reader :id, :title, :coins, :date_event, :created_date,
@@ -6,8 +7,11 @@ module Coinmarketcal
 
     def initialize(attrs = {})
       attrs.each do |k, v|
+        next if ['created_date', 'date_event'].include?(k.to_s)
         self.instance_variable_set("@#{k}", v)
       end
+      @created_date = Time.iso8601(attrs['created_date'])
+      @date_event = Time.iso8601(attrs['date_event'])
     end
 
     def self.all(attrs = {})
