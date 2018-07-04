@@ -40,13 +40,20 @@ Coinmarketcal::Coin.all
 
 To retrieve list of events:
 ```ruby
-Coinmarketcal::Event.all
+Coinmarketcal::Event.all coins: "bitcoin,ethereum",
+                         max: 10,
+                         sort_by: "created_desc",
+                         date_range_start: "30/07/2018",
+                         date_range_end: "30/08/2018"
+
 ```
 
 To retrieve list of categories:
 ```ruby
 Coinmarketcal::Category.all
 ```
+
+For more information about API, visit https://api.coinmarketcal.com/
 
 
 ## Contributing
