@@ -5,7 +5,7 @@ require 'json'
 
 module Coinmarketcal
   class Client
-    HOST = 'https://api.coinmarketcal.com'
+    HOST = 'https://api.coinmarketcal.com'.freeze
 
     attr_reader :client_id, :client_secret, :access_token
 
@@ -39,9 +39,12 @@ module Coinmarketcal
     def return_response(response)
       if response.status.to_i == 200
         response.body
-      else
-        puts response.status
-        #TODO: error handling
+      elsif response.status.to_i == 400
+        error_message = response.body["error_description"] || response.body["message"]
+        raise Coinmarketcal::FilterError, error_message
+      elsif response.status.to_i == 401
+        error_message = response.body["error_description"] || response.body["message"]
+        raise Coinmarketcal::TokenExpiredError, error_message
       end
     end
 

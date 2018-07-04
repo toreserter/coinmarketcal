@@ -1,4 +1,5 @@
 require "coinmarketcal/version"
+require "coinmarketcal/exceptions"
 
 module Coinmarketcal
   autoload :Client, 'coinmarketcal/client'
